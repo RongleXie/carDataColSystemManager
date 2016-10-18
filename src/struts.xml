@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 指定Web应用的默认编码集,相当于调用HttpServletRequest的setCharacterEncoding方法 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<!-- name包名 extends:继承父类的包名 -->
+	<package name="struts2" extends="struts-default">
+		<!--default-action-ref的作用为当所请求的Action不存在或找不到时，会默认调用指定的error -->
+		<!--
+			<default-action-ref name="error"></default-action-ref> <action
+			name="error"> <result>/error.jsp</result> </action>
+		-->
+		<!--
+			<action name="news"
+			class="com.yesbulo.cardatacolsystem.action.NewsAction"> <result
+			name="success">/manager/common/do_success.jsp</result> <result
+			name="fail">/manager/common/fail.jsp</result> <result
+			name="adminNewsList">/manager/News/news.jsp</result> <result
+			name="show_page" type="chain">queryPage</result> </action> <action
+			name="addmessage"
+			class="com.yesbulo.cardatacolsystem.action.MessageAction"> <result
+			name="success">/contact.jsp</result> <result
+			name="error">/error.jsp</result> </action> <action name="product_*"
+			class="com.yesbulo.cardatacolsystem.action.ProductAction"
+			method="{1}"> <result name="select">/product_like.jsp</result>
+			</action> <action name="product"
+			class="com.yesbulo.cardatacolsystem.action.ProductAction"> <result
+			name="success">/manager/common/do_success.jsp</result> <result
+			name="fail">/manager/common/fail.jsp</result> <result
+			name="adminProductList">/manager/Product/product.jsp</result> <result
+			name="eee">/manager/Product/product_like.jsp</result> <result
+			name="show_page" type="chain">queryPage</result> </action> <action
+			name="message"
+			class="com.yesbulo.cardatacolsystem.action.MessageAction"> <result
+			name="success">/manager/common/do_success.jsp</result> <result
+			name="fail">/manager/common/fail.jsp</result> <result
+			name="adminMessageList">/manager/Message/message.jsp</result> <result
+			name="show_page" type="chain">queryPage</result> </action> <action
+			name="user" class="com.yesbulo.cardatacolsystem.action.UserAction">
+			<result name="success">/manager/common/do_success.jsp</result>
+			<result name="fail">/manager/common/fail.jsp</result> <result
+			name="adminUserList">/manager/User/user.jsp</result> <result
+			name="show_page" type="chain">queryPage</result> </action> <action
+			name="link" class="com.yesbulo.cardatacolsystem.action.LinkAction">
+			<result name="success">/manager/common/do_success.jsp</result>
+			<result name="fail">/manager/common/fail.jsp</result> <result
+			name="adminLinkList">/manager/Link/link.jsp</result> <result
+			name="show_page" type="chain">queryPage</result> </action> <action
+			name="login" class="com.yesbulo.cardatacolsystem.action.LoginAction"
+			method="login"> <result name="input">/login.jsp</result> <result
+			name="success">/manager/index.jsp</result> <result
+			name="error">/login.jsp</result> </action> <action name="checkcode"
+			class="com.yesbulo.cardatacolsystem.action.CheckCodeAction">
+			</action>
+		-->
+		<action name="user" class="com.yesbulo.cardatacolsystem.action.UserAction">
+			<result name="success">/manager/common/do_success.jsp</result>
+			<result name="fail">/manager/common/fail.jsp</result>
+			<result name="adminUserList">/manager/User/user.jsp</result>
+			<result name="show_page" type="chain">queryPage</result>
+		</action>
+		<action name="cardata"
+	class="com.yesbulo.cardatacolsystem.action.CardataAction">
+	<result name="success">/manager/common/do_success.jsp</result>
+	<result name="fail">/manager/common/fail.jsp</result>
+	<result name="adminCarDataList">/manager/CarData/cardata.jsp</result>
+	<result name ="show_page " type="chain">queryPage</result>
+</action>
+	</package>
+
+</struts>    
